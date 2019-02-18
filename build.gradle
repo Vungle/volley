@@ -62,4 +62,5 @@ tasks.withType(JavaCompile) {
 }
 
 apply from: 'rules.gradle'
+apply from: 'process_aar.gradle'
 apply from: 'bintray.gradle'
