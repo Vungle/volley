@@ -1,0 +1,11 @@
+//Here we create a task and inject it after aar generated,
+//which change the package name to avoid conflicts
+
+afterEvaluate {
+    task bundleReleaseAar.finalizedBy(processAar)
+}
+
+task processAar(type: Exec) {
+    workingDir 'tools'
+    commandLine './process_aar.sh', '../build/outputs/aar'
+}
